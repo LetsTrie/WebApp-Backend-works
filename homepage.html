@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <title>Homepage</title>
+</head>
+
+<body>
+	<div id = "homepageID">	
+		<h1> Welcome To The Homepage </h1>
+		<div id = "login_signin" style="display: none">
+			<div> <a href="sign_in.html"> <button> sign in </button> </a> </div>
+			<div> <a href="sign_up.html"> <button> sign up </button> </a> </div>
+		</div>
+
+
+	
+		<div id="logged_in" style="display: none">
+	    	<h3>Welcome User (For Sign in/ Sign up, First click log out)</h3>
+	    	<p id="user_welcome">Welcome to Firebase web login Example. You're currently logged in.</p>
+	    
+
+			<div id = "VerifyYourAccount" onclick = "SendVerificationCode()" style = "display: none">
+				<button> Verify Your Account </button>
+			</div>
+
+
+			<div id = "Verified" style = "display: none">
+				<p> Your Account is verified. </p>
+			</div>
+
+	    	<button onclick="logout()">Logout</button>
+	  	</div>
+
+	</div>
+	<hr>
+
+
+	<!-- .........................Firebase Things....................... -->
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+	<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAeEvRR1S_Pb2d8xA6N8uIvZz_SlN_PntY",
+		    authDomain: "medicorum-79cc2.firebaseapp.com",
+		    databaseURL: "https://medicorum-79cc2.firebaseio.com",
+		    projectId: "medicorum-79cc2",
+		    storageBucket: "medicorum-79cc2.appspot.com",
+		    messagingSenderId: "874407517278"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+	<!-- ......................................................... -->
+	
+	<script type="text/javascript" src="auth_checking.js"></script>
+</body>
+</html>

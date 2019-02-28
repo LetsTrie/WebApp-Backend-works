@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up Page</title>
+</head>
+
+<body>
+
+	<div id = "signUpID">
+
+		<h1> Sign Up Here </h1>
+			<div>
+				<label> First Name: </label>
+				<input type="text" id = "signUpFirstNameID">
+			</div>
+
+			<div>
+				<label> Last Name: </label>
+				<input type="text" id = "signUpLastNameID">
+			</div>
+
+			<div>
+				<label> Email Address: </label>
+				<input type="email" id = "signUpEmailAddressID">
+			</div>
+
+			<div>
+				<label> Password: </label>
+				<input type="password" id = "signUpPasswordID">
+			</div>
+
+			<div>
+				<label> Confirm Password: </label>
+				<input type="password" id = "signUpPasswordAgainID">
+			</div>
+	        
+	        <button type="submit" onclick="Signup()">Create Your Account</button>
+
+	        <div>
+    			<p>Already have an account? <a href="sign_in.html">Sign in</a>.</p>
+  			</div>
+
+	</div>
+	
+	<div>
+		<a href="homepage.html"> <button> go to homepage </button> </a>
+	</div>
+
+	<hr>
+
+
+	<!-- .........................Firebase Things....................... -->
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+	<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAeEvRR1S_Pb2d8xA6N8uIvZz_SlN_PntY",
+		    authDomain: "medicorum-79cc2.firebaseapp.com",
+		    databaseURL: "https://medicorum-79cc2.firebaseio.com",
+		    projectId: "medicorum-79cc2",
+		    storageBucket: "medicorum-79cc2.appspot.com",
+		    messagingSenderId: "874407517278"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+	<!-- ......................................................... -->
+
+<script type="text/javascript" src="sign_up_firebase.js"></script>
+
+</body>
+</html>
