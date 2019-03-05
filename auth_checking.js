@@ -38,3 +38,17 @@ function SendVerificationCode() {
       window.alert("Error Message: " + errorMessage);  
 	});
 }
+
+function create_post_newpage_selector()  {
+	try {
+		var user = firebase.auth().currentUser;
+		if(user != null) {
+			window.location = "CreateNewPost.html";
+		} else {
+			window.location = "sign_in.html";
+		}
+	}
+	catch (err) {
+			window.location = "sign_in.html";
+	} 
+}

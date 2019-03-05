@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  	<title>sign in page</title>
+  	<title>Create New page</title>
 </head>
 
 <body>
-	<div id = "loginPageID">
-		<h1 id = "SignInParagraph"> First You Have to Login </h1>
-			<div>
-				<label> Email Address: </label>
-				<input type="email" id = "loginEmailID">
-			</div>
 
-			<div>
-				<label> Password: </label>
-				<input type="password" id = "LoginPasswordID">
-			</div>
-
-	        <button type="submit" onclick="login()">login</button>
-
-         	<div>
-				<p> Don't Have Any Account? <a href="sign_up.html">Sign up</a>.</p>
-			</div>
-	</div>
-	
+	<h1> Create New Post Here </h1>
 	<div>
-		<a href="homepage.html"> <button> go to homepage </button> </a>
+		<label> Title: </label>
+		<input type="text" id = "title_ID">
 	</div>
-	<hr>
+
+	<div>
+		<label> Description: </label>
+		<input type="text" id = "description_ID">
+	</div>
+
+	<div>
+		<label> Tag: </label>
+		<input type="text" id = "tag_ID">
+	</div>
+
+	<div>
+		<input type="text" id = "minute_ID">	
+		<label> minute(s) to read </label>
+	</div>
+
+
+	<button type="submit" onclick="post_now()">Post Now</button>
+
 	<!-- .........................Firebase Things....................... -->
 	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
 	<script>
@@ -44,7 +46,9 @@
 	</script>
 	<!-- ......................................................... -->
 
+	
+	<script type="text/javascript" src="create_post.js"></script>
 
-<script type="text/javascript" src="sign_in_firebase.js"></script>
+
 </body>
 </html>

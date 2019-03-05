@@ -17,9 +17,16 @@ function Signup(){
 		return;
 	}
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(function(user) {
-	    var user = firebase.auth().currentUser;
-	    // document.getElementById("SignInParagraph").innerHTML = "Account is Successfully Created. Ready for Login." // Getting Error
-	    firebase.auth().signOut(); // jodi sign up er pore abar login na korte chai, taile ei line lagbe.....
+	 //    var user = firebase.auth().currentUser;
+	 //    var userId = user.uid;
+		// firebase.database().ref('Users/' + userId).set({
+		// 	FirstName : userFirstName,
+		// 	LastName : userLastName,
+		// 	Email : userEmail,
+		// 	UserID : userId
+		// });
+
+	    firebase.auth().signOut(); 
 	    window.location = "sign_in.html";
 	}, function(error) {
 	 	var errorCode = error.code;
