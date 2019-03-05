@@ -8,7 +8,9 @@ function post_now() {
 
   // var newPostKey = firebase.database().ref().child('UserPost').push().key;
   
-  // //it is not working after that.....  
+  // //it is not working after that..... May be I coded in wrong way. 
+  // //I wanted to branch these informations. post's are in "UserPost" branch. user's info is in "UserInfo" branch.
+  
   // firebase.database().ref('UserPost').child(newPostKey).set({
   //   Author  : post_author,
   //   Title   : post_title,

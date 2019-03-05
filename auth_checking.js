@@ -21,6 +21,9 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+//This is working... But others is not working.......
+firebase.database().ref().child("Text").set("in_Auth_checking");
+
 function logout(){
   firebase.auth().signOut();
 }
