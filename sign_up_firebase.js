@@ -16,15 +16,18 @@ function Signup(){
 		window.alert("Invalid Email");
 		return;
 	}
+
+	// But this line was working on "homepage.html"
+	firebase.database().ref().child("In_Sign_UP").set("Hello");
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(function(user) {
-	 //    var user = firebase.auth().currentUser;
-	 //    var userId = user.uid;
-		// firebase.database().ref('Users/' + userId).set({
-		// 	FirstName : userFirstName,
-		// 	LastName : userLastName,
-		// 	Email : userEmail,
-		// 	UserID : userId
-		// });
+	    var user = firebase.auth().currentUser;
+	    var userId = user.uid;
+		firebase.database().ref('/Users/' + userId).set({
+			FirstName : userFirstName,
+			LastName : userLastName,
+			Email : userEmail,
+			UserID : userId
+		});
 
 	    firebase.auth().signOut(); 
 	    window.location = "sign_in.html";
