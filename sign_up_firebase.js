@@ -17,12 +17,10 @@ function Signup(){
 		return;
 	}
 
-	// But this line was working on "homepage.html"
-	firebase.database().ref().child("In_Sign_UP").set("Hello");
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(function(user) {
 	    var user = firebase.auth().currentUser;
 	    var userId = user.uid;
-		firebase.database().ref('/Users/' + userId).set({
+		firebase.database().ref('/UserInfo/' + userId).set({
 			FirstName : userFirstName,
 			LastName : userLastName,
 			Email : userEmail,
