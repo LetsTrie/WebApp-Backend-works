@@ -4,7 +4,8 @@ function post_now() {
   var post_description = document.getElementById("description_ID").value;
   var post_tag = document.getElementById("tag_ID").value;
   var post_readingTime = document.getElementById("minute_ID").value;
-  var post_postTime = new Date();
+  var V = new Date(); 
+  var post_postTime = V.toString();
   var newPostKey = firebase.database().ref().child('UserPost').push().key;
 
   firebase.database().ref('/UserPost/' + newPostKey).set({
