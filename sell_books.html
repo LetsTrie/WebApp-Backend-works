@@ -21,11 +21,25 @@
 		<input type="text" id = "tag_ID">
 	</div>
 
-	<div>
-		<label> Book Pic: </label>
-		<input type="text" id = "tag_ID">
-	</div>
-
 	<button type="submit" onclick="sell_now()">Sell This Book</button>
+
+	<!-- .........................Firebase Things....................... -->
+
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+	<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAeEvRR1S_Pb2d8xA6N8uIvZz_SlN_PntY",
+		    authDomain: "medicorum-79cc2.firebaseapp.com",
+		    databaseURL: "https://medicorum-79cc2.firebaseio.com",
+		    projectId: "medicorum-79cc2",
+		    storageBucket: "medicorum-79cc2.appspot.com",
+		    messagingSenderId: "874407517278"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+	<!-- ......................................................... -->
+	
+	<script type="text/javascript" src="sell_book.js"></script>
 </body>
 </html>

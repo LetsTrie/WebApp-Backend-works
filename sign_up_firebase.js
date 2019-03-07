@@ -19,6 +19,15 @@ function Signup(){
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(function(user) {
 	    var user = firebase.auth().currentUser;
 	    var userId = user.uid;
+
+	    user.updateProfile({
+		  displayName: userFirstName + " " + userLastName
+		}).then(function() {
+		  // Update successful.
+		}).catch(function(error) {
+		  // An error happened.
+		});
+
 		firebase.database().ref('users/' + userId).set({
 			FirstName : userFirstName,
 			LastName : userLastName,

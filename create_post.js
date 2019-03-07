@@ -1,5 +1,5 @@
 function post_now() {
-  var post_author_email = firebase.auth().currentUser.email;
+  var post_author_Name = firebase.auth().currentUser.displayName;
   var post_title = document.getElementById("title_ID").value;
   var post_description = document.getElementById("description_ID").value;
   var post_tag = document.getElementById("tag_ID").value;
@@ -9,9 +9,12 @@ function post_now() {
   var newPostKey = firebase.database().ref().child('UserPost').push().key;
 
   firebase.database().ref('/UserPost/' + newPostKey).set({
-    Author_email    : post_author_email,
+    Author_Name     : post_author_Name,
     Title           : post_title,
-    Description     : post_description
+    Description     : post_description,
+    Tag             : post_tag,
+    ReadingTime     : post_readingTime,
+    postTime        : post_postTime
   }).then(function() {
     window.location = "homepage.html";
   });
