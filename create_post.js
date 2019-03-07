@@ -7,11 +7,12 @@ function post_now() {
   var post_postTime = new Date();
 
   var newPostKey = firebase.database().ref().child('UserPost').push().key;
+
   firebase.database().ref('/UserPost/' + newPostKey).set({
     Author_email    : post_author_email,
     Title           : post_title,
     Description     : post_description
+  }).then(function() {
+    window.location = "homepage.html";
   });
-  
-  window.location = "homepage.html";
 }
