@@ -16,19 +16,25 @@ function Signup(){
 		window.alert("Invalid Email");
 		return;
 	}
-
 	firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).then(function(user) {
 	    var user = firebase.auth().currentUser;
 	    var userId = user.uid;
-		firebase.database().ref('/UserInfo/' + userId).set({
+		firebase.database().ref('users/' + userId).set({
 			FirstName : userFirstName,
 			LastName : userLastName,
 			Email : userEmail,
 			UserID : userId
+		})
+		.then(function() {
+			firebase.auth().signOut();
+			window.location = "sign_in.html";
+		})
+		.catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			window.alert("Error Code: " + errorCode);
+			window.alert("Error Message: " + errorMessage);
 		});
-
-	    firebase.auth().signOut(); 
-	    window.location = "sign_in.html";
 	}, function(error) {
 	 	var errorCode = error.code;
 		var errorMessage = error.message;
