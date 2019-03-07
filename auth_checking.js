@@ -52,3 +52,19 @@ function create_post_newpage_selector()  {
 			window.location = "sign_in.html";
 	} 
 }
+    
+var DatabaseRef = firebase.database().ref('/UserPost');
+
+DatabaseRef.on('value', function(snapshot) {
+  snapshot.forEach(function(childSnapshot) {  
+      var childData = childSnapshot.val();
+      document.querySelector("#All_posts").innerHTML += "<div> <p> " + 
+            "Author_Name : " + childData.Author_Name +        "<br>" + 
+            "Post Title : " + childData.Title +               "<br>" + 
+            "Post Description : " + childData.Description +   "<br>" + 
+            "Post Tag : " + childData.Tag +                   "<br>" +
+            "Post Reading Time : " + childData.ReadingTime +  "<br>" + 
+            "Post Time : " + childData.postTime +             "<br>" + 
+            "</p> </div> <hr>";
+  });
+});
