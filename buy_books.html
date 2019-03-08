@@ -5,8 +5,30 @@
 </head>
 
 <body>
-	<div>	
-		<h1> Buy Books </h1>
-	</div>
+	<h1> Buy Books </h1>
+	<hr>
+	<div id = "All_Book_posts"> </div>
+
+
+
+
+	<!-- .........................Firebase Things....................... -->
+	<script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+	<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyAeEvRR1S_Pb2d8xA6N8uIvZz_SlN_PntY",
+		    authDomain: "medicorum-79cc2.firebaseapp.com",
+		    databaseURL: "https://medicorum-79cc2.firebaseio.com",
+		    projectId: "medicorum-79cc2",
+		    storageBucket: "medicorum-79cc2.appspot.com",
+		    messagingSenderId: "874407517278"
+		  };
+		  firebase.initializeApp(config);
+	</script>
+	<!-- ......................................................... -->
+
+	
+	<script type="text/javascript" src="buy_books.js"></script>
 </body>
 </html>
